@@ -26,7 +26,7 @@ import static com.applicastertest.alecmedina.mylocalposts.Constants.CLIENT_ID;
  * Created by alec.medina on 7/28/17.
  */
 
-public class NetworkUtils {
+public class InstagramUtils {
 
     public final static String[] MAP_PERMISSIONS = new String[]{Manifest.permission.ACCESS_FINE_LOCATION,
             Manifest.permission.ACCESS_COARSE_LOCATION};
@@ -39,7 +39,7 @@ public class NetworkUtils {
         void locationSearchCallback(InstagramSearchModel instagramSearchModel);
     }
 
-    public NetworkUtils(Context context, NetworkCallBacks callback) {
+    public InstagramUtils(Context context, NetworkCallBacks callback) {
         this.callback = callback;
         this.context = context;
     }

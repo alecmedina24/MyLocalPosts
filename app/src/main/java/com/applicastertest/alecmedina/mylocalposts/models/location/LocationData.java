@@ -6,7 +6,7 @@ import com.google.gson.annotations.Expose;
  * Created by alec.medina on 7/27/17.
  */
 
-public class Datum {
+public class LocationData {
 
     @Expose
     private String id;

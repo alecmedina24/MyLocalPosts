@@ -1,4 +1,4 @@
-package com.applicastertest.alecmedina.mylocalposts.models;
+package com.applicastertest.alecmedina.mylocalposts.models.location;
 
 import com.google.gson.annotations.Expose;
 
@@ -11,13 +11,13 @@ import java.util.List;
 public class InstagramSearchModel {
 
     @Expose
-    private List<Datum> data = null;
+    private List<LocationData> data = null;
 
-    public List<Datum> getData() {
+    public List<LocationData> getData() {
         return data;
     }
 
-    public void setData(List<Datum> data) {
+    public void setData(List<LocationData> data) {
         this.data = data;
     }
 
