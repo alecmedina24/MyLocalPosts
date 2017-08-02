@@ -1,7 +1,7 @@
-package com.applicastertest.alecmedina.mylocalposts;
+package com.applicastertest.alecmedina.mylocalposts.networking;
 
-import com.applicastertest.alecmedina.mylocalposts.networking.InstagramApi;
-import com.applicastertest.alecmedina.mylocalposts.networking.NetworkUtils;
+import com.applicastertest.alecmedina.mylocalposts.BuildConfig;
+import com.applicastertest.alecmedina.mylocalposts.models.autoValue.AutoValueAdapterFactory;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -10,7 +10,7 @@ import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-import static com.applicastertest.alecmedina.mylocalposts.Constants.BASE_URL;
+import static com.applicastertest.alecmedina.mylocalposts.networking.InstagramApi.BASE_URL;
 
 /**
  * Created by alec.medina on 7/27/17.
@@ -37,7 +37,7 @@ public class BaseService {
         }
 
         Gson gson = new GsonBuilder()
-                .excludeFieldsWithoutExposeAnnotation()
+                .registerTypeAdapterFactory(new AutoValueAdapterFactory())
                 .create();
 
         instagramApi = new Retrofit.Builder()

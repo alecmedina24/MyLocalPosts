@@ -1,6 +1,10 @@
 package com.applicastertest.alecmedina.mylocalposts.models.media;
 
-import com.google.gson.annotations.Expose;
+import android.support.annotation.Nullable;
+
+import com.applicastertest.alecmedina.mylocalposts.models.autoValue.AutoGson;
+import com.google.auto.value.AutoValue;
+import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
@@ -8,16 +12,9 @@ import java.util.List;
  * Created by alec.medina on 7/28/17.
  */
 
-public class MediaSearchModel {
+@AutoValue @AutoGson
+public abstract class MediaSearchModel {
 
-    @Expose
-    private List<MediaData> data = null;
-
-    public List<MediaData> getData() {
-        return data;
-    }
-
-    public void setData(List<MediaData> data) {
-        this.data = data;
-    }
+    @SerializedName("data")
+    public abstract @Nullable List<MediaData> data();
 }

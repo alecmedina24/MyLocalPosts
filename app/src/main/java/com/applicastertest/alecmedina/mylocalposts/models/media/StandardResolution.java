@@ -1,41 +1,20 @@
 package com.applicastertest.alecmedina.mylocalposts.models.media;
 
-import com.google.gson.annotations.Expose;
+import com.applicastertest.alecmedina.mylocalposts.models.autoValue.AutoGson;
+import com.google.auto.value.AutoValue;
+import com.google.gson.annotations.SerializedName;
 
 /**
  * Created by alec.medina on 7/28/17.
  */
 
-public class StandardResolution {
+@AutoValue @AutoGson
+public abstract class StandardResolution {
 
-    @Expose
-    private String url;
-    @Expose
-    private Integer width;
-    @Expose
-    private Integer height;
-
-    public String getUrl() {
-        return url;
-    }
-
-    public void setUrl(String url) {
-        this.url = url;
-    }
-
-    public Integer getWidth() {
-        return width;
-    }
-
-    public void setWidth(Integer width) {
-        this.width = width;
-    }
-
-    public Integer getHeight() {
-        return height;
-    }
-
-    public void setHeight(Integer height) {
-        this.height = height;
-    }
+    @SerializedName("url")
+    public abstract String url();
+    @SerializedName("width")
+    public abstract Integer width();
+    @SerializedName("height")
+    public abstract Integer height();
 }

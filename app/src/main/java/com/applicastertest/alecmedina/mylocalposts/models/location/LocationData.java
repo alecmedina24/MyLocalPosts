@@ -1,52 +1,22 @@
 package com.applicastertest.alecmedina.mylocalposts.models.location;
 
-import com.google.gson.annotations.Expose;
+import com.applicastertest.alecmedina.mylocalposts.models.autoValue.AutoGson;
+import com.google.auto.value.AutoValue;
+import com.google.gson.annotations.SerializedName;
 
 /**
  * Created by alec.medina on 7/27/17.
  */
 
-public class LocationData {
+@AutoValue @AutoGson
+public abstract class LocationData {
 
-    @Expose
-    private String id;
-    @Expose
-    private Double latitude;
-    @Expose
-    private Double longitude;
-    @Expose
-    private String name;
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public Double getLatitude() {
-        return latitude;
-    }
-
-    public void setLatitude(Double latitude) {
-        this.latitude = latitude;
-    }
-
-    public Double getLongitude() {
-        return longitude;
-    }
-
-    public void setLongitude(Double longitude) {
-        this.longitude = longitude;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
+    @SerializedName("id")
+    public abstract String id();
+    @SerializedName("latitude")
+    public abstract Double latitude();
+    @SerializedName("longitude")
+    public abstract Double longitude();
+    @SerializedName("name")
+    public abstract String name();
 }

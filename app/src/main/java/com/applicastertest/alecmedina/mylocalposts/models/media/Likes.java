@@ -1,21 +1,16 @@
 package com.applicastertest.alecmedina.mylocalposts.models.media;
 
-import com.google.gson.annotations.Expose;
+import com.applicastertest.alecmedina.mylocalposts.models.autoValue.AutoGson;
+import com.google.auto.value.AutoValue;
+import com.google.gson.annotations.SerializedName;
 
 /**
  * Created by alec.medina on 7/28/17.
  */
 
-public class Likes {
+@AutoValue @AutoGson
+public abstract class Likes {
 
-    @Expose
-    private Integer count;
-
-    public Integer getCount() {
-        return count;
-    }
-
-    public void setCount(Integer count) {
-        this.count = count;
-    }
+    @SerializedName("count")
+    public abstract Integer count();
 }

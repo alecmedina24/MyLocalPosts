@@ -1,4 +1,4 @@
-package com.applicastertest.alecmedina.mylocalposts.adapters;
+package com.applicastertest.alecmedina.mylocalposts.posts.adapters;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -31,7 +31,9 @@ public class InstagramPostAdapter extends RecyclerView.Adapter<InstagramPostAdap
 
     @Override
     public ItemViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return new ItemViewHolder(new View(context));
+        View view = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.instagram_post_list_item, parent, false);
+        return new ItemViewHolder(view);
     }
 
     @Override
@@ -50,7 +52,6 @@ public class InstagramPostAdapter extends RecyclerView.Adapter<InstagramPostAdap
 
             PostModel post = posts.get(position);
 
-            itemView.userCommentView.setText(post.getUserComment());
             itemView.usernameView.setText(post.getUserName());
 
             holder.masterLayout.addView(itemView.instagramPostLayout);
@@ -84,7 +85,7 @@ public class InstagramPostAdapter extends RecyclerView.Adapter<InstagramPostAdap
 
         public ItemViewHolder(View itemView) {
             super(itemView);
-            masterLayout = (LinearLayout) itemView.findViewById(R.id.master_layout);
+            masterLayout = (LinearLayout) itemView.findViewById(R.id.main_layout);
             mChildViews = new ArrayList<>();
         }
     }

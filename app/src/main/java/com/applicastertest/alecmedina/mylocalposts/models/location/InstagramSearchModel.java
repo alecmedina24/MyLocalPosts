@@ -1,6 +1,8 @@
 package com.applicastertest.alecmedina.mylocalposts.models.location;
 
-import com.google.gson.annotations.Expose;
+import com.applicastertest.alecmedina.mylocalposts.models.autoValue.AutoGson;
+import com.google.auto.value.AutoValue;
+import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
@@ -8,17 +10,10 @@ import java.util.List;
  * Created by alec.medina on 7/27/17.
  */
 
-public class InstagramSearchModel {
+@AutoValue @AutoGson
+public abstract class InstagramSearchModel {
 
-    @Expose
-    private List<LocationData> data = null;
-
-    public List<LocationData> getData() {
-        return data;
-    }
-
-    public void setData(List<LocationData> data) {
-        this.data = data;
-    }
+    @SerializedName("data")
+    public abstract List<LocationData> data();
 
 }
